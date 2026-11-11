@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -43,6 +45,21 @@ public class Main {
         System.out.println("\nList After Sorting");
         for(int i = 0; i < numberList.length; i++){
             System.out.println(numberList[i]);
+        }
+
+        String intString = "";
+
+        try{
+            FileWriter writer = new FileWriter("newTest.txt");
+            for(int i =0; i < numberList.length; i++){
+                intString += numberList[i];
+            }
+            writer.write(intString);
+            writer.close();
+
+
+        }catch(IOException ex){
+            throw new RuntimeException(ex);
         }
     }
 }
