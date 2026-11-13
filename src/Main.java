@@ -50,7 +50,7 @@ public class Main {
         String intString = "";
 
         try{
-            FileWriter writer = new FileWriter("newTest.txt");
+            FileWriter writer = new FileWriter(file);
             for(int i =0; i < numberList.length; i++){
                 intString += numberList[i];
             }
